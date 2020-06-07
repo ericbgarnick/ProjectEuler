@@ -1,5 +1,7 @@
 from sys import argv
 
+from primes import is_prime
+
 
 def nth_prime(n: int) -> int:
     last_val = 1
@@ -8,15 +10,6 @@ def nth_prime(n: int) -> int:
         if is_prime(last_val):
             n -= 1
     return last_val
-
-
-def is_prime(candidate: int) -> bool:
-    factor = 2
-    while factor ** 2 <= candidate:
-        if candidate % factor == 0:
-            return False
-        factor += 1
-    return True
 
 
 if __name__ == '__main__':
